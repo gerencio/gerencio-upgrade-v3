@@ -1,0 +1,25 @@
+# NPM
+node_modules/
+.package-lock.json
+*.log
+
+# Compiled files
+dist/
+
+# SO files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/*
+.idea/
+
+# Env
+.env*
+!.env.example
+
+# Coverage
+coverage/
+
+# Docs
+docs/
