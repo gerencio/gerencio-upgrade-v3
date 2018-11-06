@@ -26,7 +26,7 @@ export async function deployUpgrade(serviceName: string, newServiceImage: string
 
     if (Object.keys(yamlDoc).filter(d => d === 'services').length) {
       // Docker-compose v2
-      const expression = util.format('^%s*', serviceName)
+      const expression = util.format('^%s$', serviceName)
       const matches = filterKeys(yamlDoc['services'], expression)
 
       if (matches.length === 0) {
