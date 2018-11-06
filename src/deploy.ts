@@ -125,7 +125,7 @@ export async function deployUpgrade(serviceName: string, newServiceImage: string
       logger.log('Detected environment: Linux')
       cmd = getDir() + '/rancher-compose '
     }
-    logger.log('Running:\n' + cmd + args)
+    logger.log('Running:\n' + cmd + args.replace(/\-\-access\-key.*\-p/, '--access-key ###### --secret-key ###### -p'))
     exec(cmd + args, (error/*, stdout, stderr*/) => {
       if (error) {
         logger.error(error)
