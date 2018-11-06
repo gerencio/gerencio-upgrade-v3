@@ -43,14 +43,14 @@ const usage = commandLineUsage([
         description: 'A gerencio url'
       },
       {
-        name: 'aws-access-key',
+        name: 'gerenc-access-key',
         typeLabel: '{underline -a}',
-        description: 'A aws access key'
+        description: 'A gerenc.io access key'
       },
       {
-        name: 'aws-secret-key',
+        name: 'gerenc-secret-key',
         typeLabel: '{underline -s}',
-        description: 'A aws secret key'
+        description: 'A gerenc.io secret key'
       },
       {
         name: 'version',
@@ -83,8 +83,8 @@ function main(): Promise<number> {
   options = commandLineArgs([
     { name: 'help', alias: 'h', type: Boolean },
     { name: 'version', alias: 'v', type: Boolean },
-    { name: 'aws-secret-key', alias: 's', type: String },
-    { name: 'aws-access-key', alias: 'a', type: String },
+    { name: 'gerenc-secret-key', alias: 's', type: String },
+    { name: 'gerenc-access-key', alias: 'a', type: String },
     { name: 'gerenc-stack', alias: 'c', type: String },
     { name: 'gerenc-url', alias: 'u', type: String },
     { name: 'timeout', alias: 't', type: String },
@@ -117,8 +117,8 @@ function main(): Promise<number> {
   let interval: number | undefined = options.timeout
 
   let cliEnvs: IDeployEnvs = {
-    gerencioAccessKey: options['aws-access-key'] || environments.gerencioAccessKey,
-    gerencioSecretKey: options['aws-secret-key'] || environments.gerencioSecretKey,
+    gerencioAccessKey: options['gerenc-access-key'] || environments.gerencioAccessKey,
+    gerencioSecretKey: options['gerenc-secret-key'] || environments.gerencioSecretKey,
     gerencioStack: options['gerenc-stack'] || environments.gerencioStack,
     gerencioUrl: options['gerenc-url'] || environments.gerencioUrl
   }
