@@ -5,7 +5,7 @@ This script upgrades a single service to a new container ID in a target gerenc.i
 ## Getting Started
 
 1. [sudo] `$ npm install -g gerencio-upgrade`
-2. `$ gerencio-upgrade <serviceName> <dockerImage>:<dockerTag>`, ej: `$ gerencio-upgrade nodecolor xdevelsistemas/taiga-docker:0.3.1`
+2. `$ gerencio-upgrade --service-name <serviceName> --docker-image <dockerImage>:<dockerTag>`, ej: `$ gerencio-upgrade nodecolor xdevelsistemas/taiga-docker:0.3.1`
 
 ### Prerequisites
 
