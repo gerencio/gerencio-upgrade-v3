@@ -8,7 +8,7 @@
     "build:watch": "tsc --watch",
     "doc": "typedoc --excludeExternals --hideGenerator --exclude **/index.ts --out ./docs",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "start": "ts-node -r tsconfig-paths/register src/index.ts",
+    "start": "ts-node -r tsconfig-paths/register src/cli.ts",
     "test": "NODE_ENV=test jest",
     "tsfmt": "tsfmt --no-tslint --no-vscode --verbose -r"
   },
