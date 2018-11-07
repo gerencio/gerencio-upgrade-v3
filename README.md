@@ -36,4 +36,4 @@ Created and maintained by xDevel® 2018
 
 ## License
 
-Not implemented.
+[MIT](LICENSE)
