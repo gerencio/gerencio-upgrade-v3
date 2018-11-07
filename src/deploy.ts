@@ -2,12 +2,12 @@ import { execSync } from 'child_process'
 import * as download from 'download'
 import * as fs from 'fs'
 import * as fse from 'fs-extra'
-import { IDeployEnvs } from 'interfaces'
 import * as yaml from 'js-yaml'
 import * as path from 'path'
 import * as request from 'request'
 import * as util from 'util'
 import { config, environments as coreEnvs } from './core'
+import { IDeployEnvs } from './interfaces'
 import { filterKeys, getDir, getSource, Logger } from './utils'
 
 const writeYaml = require('write-yaml')
