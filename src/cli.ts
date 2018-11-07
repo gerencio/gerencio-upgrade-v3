@@ -76,11 +76,11 @@ const usage = commandLineUsage([
   {
     header: 'Example usage',
     content: `
-    $ gerencio-upgrade $GERENCIO_SERVICE_NAME myRespository/myProject:1.0.1
+    $ gerencio-upgrade --service-name MyServiceName --docker-image myRespository/myProject:1.0.1
     `
   },
   {
-    content: 'The gerencio and aws options can be configured with environments variables. See documentation.'
+    content: 'The gerenc.io options can be configured with environments variables. See documentation.'
   }
 ])
 
