@@ -38,6 +38,11 @@ const usage = commandLineUsage([
         description: 'A gerencio url'
       },
       {
+        name: 'gerenc-compose-url',
+        typeLabel: '{underline -g}',
+        description: 'A gerencio compose url'
+      },
+      {
         name: 'gerenc-stack',
         typeLabel: '{underline -c}',
         description: 'A gerencio url'
@@ -87,6 +92,7 @@ function main(): Promise<number> {
     { name: 'gerenc-access-key', alias: 'a', type: String },
     { name: 'gerenc-stack', alias: 'c', type: String },
     { name: 'gerenc-url', alias: 'u', type: String },
+    { name: 'gerenc-compose-url', alias: 'g', type: String },
     { name: 'timeout', alias: 't', type: String },
     { name: 'docker-image', alias: 'd', type: String },
     { name: 'service-name', alias: 'n', type: String },
@@ -120,7 +126,8 @@ function main(): Promise<number> {
     gerencioAccessKey: options['gerenc-access-key'] || environments.gerencioAccessKey,
     gerencioSecretKey: options['gerenc-secret-key'] || environments.gerencioSecretKey,
     gerencioStack: options['gerenc-stack'] || environments.gerencioStack,
-    gerencioUrl: options['gerenc-url'] || environments.gerencioUrl
+    gerencioUrl: options['gerenc-url'] || environments.gerencioUrl,
+    gerencioComposeUrl: options['gerenc-compose-url'] || environments.gerencioComposeUrl
   }
 
   return deployUpgrade(serviceName, newServiceImage, interval, cliEnvs)
