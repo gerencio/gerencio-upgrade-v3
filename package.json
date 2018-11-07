@@ -3,11 +3,16 @@
   "version": "0.0.0",
   "description": "ugrades a single service in gerenc.io",
   "main": "dist/index.js",
+  "bin": {
+    "gerencio-upgrade": "dist/cli.js"
+  },
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
     "doc": "typedoc --excludeExternals --hideGenerator --exclude **/index.ts --out ./docs",
     "lint": "tslint -p tsconfig.json -c tslint.json",
+    "prepublish": "yarn build",
     "start": "ts-node -r tsconfig-paths/register src/cli.ts",
     "test": "NODE_ENV=test jest",
     "tsfmt": "tsfmt --no-tslint --no-vscode --verbose -r"
