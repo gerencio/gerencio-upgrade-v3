@@ -1,3 +1,7 @@
+import { config } from 'dotenv'
+
+config()
+
 export const environments = {
   gerencioUrl: String(process.env.GERENCIO_URL),
   gerencioAccessKey: String(process.env.GERENCIO_ACCESS_KEY),

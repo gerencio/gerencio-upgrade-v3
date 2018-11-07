@@ -195,6 +195,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/dotenv@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@types/dotenv/-/dotenv-4.0.3.tgz#ebcfc40da7bc0728b705945b7db48485ec5b4b67"
+  integrity sha512-mmhpINC/HcLGQK5ikFJlLXINVvcxhlrV+ZOUJSN7/ottYl+8X4oSXzS9lBtDkmWAl96EGyGyLrNvk9zqdSH8Fw==
+  dependencies:
+    "@types/node" "*"
+
 "@types/download@^6.2.3":
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/@types/download/-/download-6.2.3.tgz#9bb00b4dbfd3530d562287b8d64f054c76704f7a"
