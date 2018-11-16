@@ -30,7 +30,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **David Vilaça** - *xDevel* - [davidpvilaca](https://github.com/davidpvilaca)
 * **Douglas Lima** - *xDevel* - [douglasbolis](https://github.com/douglasbolis)
 
-[![xDevel](xdevel.png)](http://xdevel.com.br)
+[![xDevel](https://github.com/gerencio/gerencio-upgrade-v3/blob/develop/xdevel.png)](http://xdevel.com.br)
 
 Created and maintained by xDevel® 2018
 
