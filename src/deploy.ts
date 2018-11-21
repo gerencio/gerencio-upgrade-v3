@@ -153,7 +153,7 @@ export function deployUpgrade(serviceName: string, newServiceImage: string, inte
         logger.log('Detected environment: Linux')
         cmd = getDir() + '/rancher-compose '
       }
-      logger.log('Running:\n' + cmd + args.replace(/\-\-access\-key.*\-p/, '--access-key ###### --secret-key ###### -p'))
+      logger.log('Running:\n' + cmd + args.replace(/\-\-access\-key.*\s\-p/, '--access-key ###### --secret-key ###### -p'))
       const output = await execPromise(cmd + args)
       logger.log(output)
     }
