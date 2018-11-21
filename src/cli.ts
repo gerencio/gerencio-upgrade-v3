@@ -29,6 +29,11 @@ const usage = commandLineUsage([
         description: 'A docker image for upgrade'
       },
       {
+        name: 'service-upgrade',
+        typeLabel: '{underline -k}',
+        description: 'A gerencio service name to upgrade (master of sidekicks)'
+      },
+      {
         name: 'timeout',
         typeLabel: '{underline -t}',
         description: 'Time limit too throw timeout error'
@@ -97,6 +102,7 @@ function main(): Promise<number> {
     { name: 'timeout', alias: 't', type: String },
     { name: 'docker-image', alias: 'd', type: String },
     { name: 'service-name', alias: 'n', type: String },
+    { name: 'service-upgrade', alias: 'k', type: String },
   ])
 
   // Check helper flag
@@ -122,6 +128,7 @@ function main(): Promise<number> {
   let serviceName: string = options['service-name']
   let newServiceImage: string = options['docker-image']
   let interval: number | undefined = options.timeout || 10000
+  let serviceUpgrade: string | undefined = options['service-upgrade']
 
   let cliEnvs: IDeployEnvs = {
     gerencioAccessKey: options['gerenc-access-key'] || environments.gerencioAccessKey,
@@ -131,7 +138,7 @@ function main(): Promise<number> {
     gerencioComposeUrl: options['gerenc-compose-url'] || environments.gerencioComposeUrl
   }
 
-  return deployUpgrade(serviceName, newServiceImage, interval, cliEnvs)
+  return deployUpgrade(serviceName, newServiceImage, interval, cliEnvs, serviceUpgrade)
     .then(
       () => 0,
       error => Promise.reject(error)

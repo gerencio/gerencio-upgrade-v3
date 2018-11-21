@@ -14,7 +14,7 @@ const fss = require('fs-sync')
 const unzip = require('unzip2')
 const logger = new Logger()
 
-export function deployUpgrade(serviceName: string, newServiceImage: string, interval = 15000, deployEnvs: IDeployEnvs = coreEnvs): Promise<void> {
+export function deployUpgrade(serviceName: string, newServiceImage: string, interval = 15000, deployEnvs: IDeployEnvs = coreEnvs, serviceUpgrade?: string): Promise<void> {
 
   function preDeploy(): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -51,11 +51,21 @@ export function deployUpgrade(serviceName: string, newServiceImage: string, inte
 
       logger.log('Searching for service definition: %s', serviceName)
       let currentServiceEntry: string | null = null
+      let currentServiceUpgrade: string | null = null
 
       if (Object.keys(yamlDoc).filter(d => d === 'services').length) {
         // Docker-compose v2
         const expression = util.format('^%s$', serviceName)
         const matches = filterKeys(yamlDoc['services'], expression)
+
+        if (serviceUpgrade) {
+          const matchesUpgrade = filterKeys(yamlDoc['services'], `^${serviceUpgrade}$`)
+          if (matchesUpgrade.length === 0) {
+            throw new Error(util.format('Could not find any services matching name: %s', serviceUpgrade))
+          } else {
+            currentServiceUpgrade = matchesUpgrade[0]
+          }
+        }
 
         if (matches.length === 0) {
           throw new Error(util.format('Could not find any services matching name: %s', serviceName))
@@ -133,7 +143,7 @@ export function deployUpgrade(serviceName: string, newServiceImage: string, inte
         targetFile,
         rancherComposeFile,
         interval,
-        currentServiceEntry
+        currentServiceUpgrade || currentServiceEntry
       )
 
       const source = getSource()
