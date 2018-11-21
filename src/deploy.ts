@@ -1,4 +1,3 @@
-import { execSync } from 'child_process'
 import * as download from 'download'
 import * as fs from 'fs'
 import * as fse from 'fs-extra'
@@ -8,7 +7,7 @@ import * as request from 'request'
 import * as util from 'util'
 import { config, environments as coreEnvs } from './core'
 import { IDeployEnvs } from './interfaces'
-import { filterKeys, getDir, getSource, Logger } from './utils'
+import { execPromise, filterKeys, getDir, getSource, Logger } from './utils'
 
 const writeYaml = require('write-yaml')
 const fss = require('fs-sync')
@@ -155,7 +154,8 @@ export function deployUpgrade(serviceName: string, newServiceImage: string, inte
         cmd = getDir() + '/rancher-compose '
       }
       logger.log('Running:\n' + cmd + args.replace(/\-\-access\-key.*\-p/, '--access-key ###### --secret-key ###### -p'))
-      execSync(cmd + args)
+      const output = await execPromise(cmd + args)
+      logger.log(output)
     }
     catch (e) {
       logger.info('DEPLOYMENT FAILED')
