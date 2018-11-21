@@ -1,3 +1,20 @@
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/gerencio/gerencio-upgrade-v3/compare/3.0.1...3.1.0) (2018-11-21)
+
+
+### Bug Fixes
+
+* exec sync with error return 0 ([2a3d65e](https://github.com/gerencio/gerencio-upgrade-v3/commit/2a3d65e))
+* log full command ([47be8b8](https://github.com/gerencio/gerencio-upgrade-v3/commit/47be8b8))
+
+
+### Features
+
+* add promise child_process exec ([28355a5](https://github.com/gerencio/gerencio-upgrade-v3/commit/28355a5))
+* add service upgrade option ([a87170f](https://github.com/gerencio/gerencio-upgrade-v3/commit/a87170f))
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/gerencio/gerencio-upgrade-v3/compare/3.0.0...3.0.1) (2018-11-16)
 
