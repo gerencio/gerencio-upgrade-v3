@@ -121,7 +121,7 @@ function main(): Promise<number> {
 
   let serviceName: string = options['service-name']
   let newServiceImage: string = options['docker-image']
-  let interval: number | undefined = options.timeout
+  let interval: number | undefined = options.timeout || 10000
 
   let cliEnvs: IDeployEnvs = {
     gerencioAccessKey: options['gerenc-access-key'] || environments.gerencioAccessKey,
