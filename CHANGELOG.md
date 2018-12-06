@@ -1,3 +1,13 @@
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/gerencio/gerencio-upgrade-v3/compare/v3.1.0...v3.1.1) (2018-12-06)
+
+
+### Bug Fixes
+
+* exit code other than 0 when has error ([b13dde0](https://github.com/gerencio/gerencio-upgrade-v3/commit/b13dde0)), closes [#2](https://github.com/gerencio/gerencio-upgrade-v3/issues/2)
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/gerencio/gerencio-upgrade-v3/compare/3.0.1...3.1.0) (2018-11-21)
 
