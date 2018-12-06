@@ -4,7 +4,7 @@ import * as commandLineUsage from 'command-line-usage'
 import { environments } from './core'
 import { deployUpgrade } from './deploy'
 import { IDeployEnvs } from './interfaces'
-import { Logger } from './utils'
+import { GerencioUpgradeError, Logger } from './utils'
 
 const project = require('../package.json')
 
@@ -108,21 +108,21 @@ function main(): Promise<number> {
   // Check helper flag
   if (options.version) {
     logger.log(`Gerencio Upgrade v${project.version}`)
-    process.exit(0)
+    return Promise.resolve(0)
   }
 
   // Check helper flag
   if (options.help) {
     console.log(usage)
-    process.exit(0)
+    return Promise.resolve(0)
   }
 
   if (!options['service-name']) {
-    throw new Error('Service name is required. Try with "--help".')
+    throw new GerencioUpgradeError('Service name is required. Try with "--help".', 126)
   }
 
   if (!options['docker-image']) {
-    throw new Error('Docker image is required. Try with "--help".')
+    throw new GerencioUpgradeError('Docker image is required. Try with "--help".', 126)
   }
 
   let serviceName: string = options['service-name']
@@ -141,16 +141,13 @@ function main(): Promise<number> {
   return deployUpgrade(serviceName, newServiceImage, interval, cliEnvs, serviceUpgrade)
     .then(
       () => 0,
-      error => Promise.reject(error)
+      error => Promise.reject(GerencioUpgradeError.fromError(error))
     )
 }
 
-function onError(error: any): void {
-  if (options !== null && (typeof error === 'string' || error.message)) {
-    logger.error(error.message || error)
-    return
-  }
-  console.log(error)
+function onError(error: GerencioUpgradeError): void {
+  logger.error(error)
+  process.exit(error.code || 1)
 }
 
 try {
@@ -158,5 +155,5 @@ try {
     .then(process.exit, onError)
     .catch(onError)
 } catch (e) {
-  onError(e)
+  onError(GerencioUpgradeError.fromError(e))
 }
