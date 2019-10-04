@@ -1,3 +1,12 @@
+## [3.1.2](https://github.com/gerencio/gerencio-upgrade-v3/compare/v3.1.1...v3.1.2) (2019-10-04)
+
+
+### Bug Fixes
+
+* resolve vulnerabilities in dependencies ([1805af7](https://github.com/gerencio/gerencio-upgrade-v3/commit/1805af7))
+
+
+
 <a name="3.1.1"></a>
 ## [3.1.1](https://github.com/gerencio/gerencio-upgrade-v3/compare/v3.1.0...v3.1.1) (2018-12-06)
 
