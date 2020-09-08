@@ -9,8 +9,8 @@ This script upgrades a single service to a new container ID in a target gerenc.i
 
 ### Prerequisites
 
-* [NodeJS (>=8.6.0)](https://nodejs.org/en/)
-* [Yarn (>=1.0.0)](https://yarnpkg.com/en)
+* [NodeJS (>=10.9.0)](https://nodejs.org/en/)
+* [Yarn (>=1.17.0)](https://yarnpkg.com/en)
 
 ## Deployment
 
