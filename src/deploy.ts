@@ -47,7 +47,7 @@ export function deployUpgrade(serviceName: string, newServiceImage: string, inte
       const rancherComposeFile = 'rancher-compose.yml'
 
       logger.log('Loading %s', sourceComposeFile)
-      const yamlDoc = yaml.safeLoad(fs.readFileSync(sourceComposeFile, 'utf8'))
+      const yamlDoc = yaml.safeLoad(fs.readFileSync(sourceComposeFile, 'utf8')) as { [key: string]: any }
 
       logger.log('Searching for service definition: %s', serviceName)
       let currentServiceEntry: string | null = null
