@@ -1,3 +1,14 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [3.1.3](https://github.com/gerencio/gerencio-upgrade-v3/compare/v3.1.2...v3.1.3) (2020-09-08)
+
+
+### Bug Fixes
+
+* **deploy:** yaml return type ([c41570b](https://github.com/gerencio/gerencio-upgrade-v3/commit/c41570bc8dc4e6a01c8585ea96d198e016a30f80))
+
 ## [3.1.2](https://github.com/gerencio/gerencio-upgrade-v3/compare/v3.1.1...v3.1.2) (2019-10-04)
 
 
@@ -65,6 +76,3 @@
 * add compose url in cli options ([a339329](https://github.com/gerencio/gerencio-upgrade-v3/commit/a339329))
 * add dotenv config ([4b37cf9](https://github.com/gerencio/gerencio-upgrade-v3/commit/4b37cf9))
 * old version with refactor ([ef49a1d](https://github.com/gerencio/gerencio-upgrade-v3/commit/ef49a1d))
-
-
-
