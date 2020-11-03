@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.4](https://github.com/gerencio/gerencio-upgrade-v3/compare/v3.1.3...v3.1.4) (2020-11-03)
+
+
+### Bug Fixes
+
+* dependencies vulnerabilities ([f9cf49c](https://github.com/gerencio/gerencio-upgrade-v3/commit/f9cf49cc8bec6cdad612b486054db92d2fefd28e))
+
 ### [3.1.3](https://github.com/gerencio/gerencio-upgrade-v3/compare/v3.1.2...v3.1.3) (2020-09-08)
 
 
